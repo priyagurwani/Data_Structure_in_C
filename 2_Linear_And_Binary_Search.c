@@ -40,6 +40,7 @@ int main() {
     // If the array is of 20 30 size you can't sit and count so use bellow code
     // int size=sizeof(check)/sizeof(int);
     int index=linearSearch(check,size,element);
+    printf("\nThrough Linear Search:\n");
     printf("The element %d is at index %d",element,index);
     
     
@@ -48,6 +49,7 @@ int main() {
     int element1=10;
     int size1=sizeof(check1)/sizeof(int);  //size starts from 1 while index from 0
     int index1=binarySearch(check1,size1,element1);
+    printf("\nThrough Binary Search:\n");
     printf("\nthe element %d is at index %d",element1,index1);
     return 0;
 }
