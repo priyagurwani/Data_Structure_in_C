@@ -61,6 +61,16 @@ int peek(struct stack *s,int i){ //i=position (not index)
      return s->arr[s->top-i+1];
  }
 }
+// To get the topmost element of array
+int stackTop(struct stack *s){
+    return s->arr[s->top];
+}
+// To get the last element of array
+int stackBottom(struct stack *s){
+    return s->arr[0];
+}
+
+
 int main() {
 
 // allocation of stack in dynamic memory
@@ -68,7 +78,7 @@ struct stack *s=(struct stack*)malloc(sizeof(struct stack));
 s->size=10;
 s->top=-1;  //array is empty so top = -1
 s->arr=(int*)malloc(s->size*sizeof(int));
-printf("Stack has been created Successfully");
+printf("Stack has been created Successfully\n");
 
 // 0=not , 1 = yes 
 printf("\nBefore Pushing is full or not :%d\n",isFull(s));
@@ -94,8 +104,10 @@ printf("\nAfter Popping is full or not :%d\n",isFull(s));
 printf("After Popping is empty or not:%d\n",isEmpty(s));
   
 for (int j=0; j < s->top+1;j++){
-        printf("\nThe value at index %d is %d\n",j,peek(s,j));
+        printf("The value at index %d is %d\n",j,peek(s,j));
     }
     
-
+    printf("Topmost Element:%d\n",stackTop(s));
+    printf("Bottommost Element:%d\n",stackBottom(s));
+    
 }
